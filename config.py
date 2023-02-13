@@ -390,6 +390,7 @@ def init_widgets_list():
                        background = colors[0],
                        mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e htop')},
                        fmt = 'Mem: {}',
+                       measure_mem = "G",
                        padding = 5,
                        decorations=[
                            BorderDecoration(
@@ -407,10 +408,10 @@ def init_widgets_list():
                        background = colors[0]
                        ),
 
-              widget.Volume(
+              widget.NvidiaSensors(
                        foreground = colors[7],
                        background = colors[0],
-                       fmt = 'Vol: {}',
+                       fmt = 'GPU: {}',
                        padding = 5,
                        decorations=[
                            BorderDecoration(
@@ -429,10 +430,11 @@ def init_widgets_list():
                        ),
 
 
-              widget.KeyboardLayout(
+              widget.OpenWeather(
                        foreground = colors[8],
                        background = colors[0],
-                       fmt = 'Keyboard: {}',
+                       fmt = 'Weather: {}',
+                       location = 'Krakow',
                        padding = 5,
                        decorations=[
                            BorderDecoration(
